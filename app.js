@@ -1,12 +1,17 @@
 import express from 'express'
+import UsuarioController from './src/app/controllers/UsuarioController.js';
+import database from './database.js';
 
 const app = express()
-const port = 3000
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+//indicar para o express ler body com json
+app.use(express.json())
 
-app.listen(port, () => {
-    console.log(`Servidor rodando aqui localhost:${port}`)
-})
+database.inicializarBancoDeDados()
+
+//  ROTAS
+app.get('/usuario/login', UsuarioController.login)
+app.post('/usuario/register', UsuarioController.register)
+app.get('/usuario/show/:id', UsuarioController.show)
+
+export default app
