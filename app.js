@@ -1,6 +1,7 @@
 import express from 'express'
 import UsuarioController from './src/app/controllers/UsuarioController.js';
 import database from './database.js';
+import authMiddleware from './middlewares/authMiddleware.js';
 
 const app = express()
 
@@ -10,8 +11,8 @@ app.use(express.json())
 database.inicializarBancoDeDados()
 
 //  ROTAS
-app.get('/usuario/login', UsuarioController.login)
-app.get('/usuario/register', UsuarioController.register)
-app.get('/usuario/show/:id', UsuarioController.show)
+app.post('/usuario/login', UsuarioController.login)
+app.post('/usuario/register', UsuarioController.register)
+app.get('/user/:id', authMiddleware, UsuarioController.show);
 
 export default app
