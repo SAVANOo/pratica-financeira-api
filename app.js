@@ -11,7 +11,7 @@ database.inicializarBancoDeDados()
 
 //  ROTAS
 app.get('/usuario/login', UsuarioController.login)
-app.post('/usuario/register', UsuarioController.register)
+app.get('/usuario/register', UsuarioController.register)
 app.get('/usuario/show/:id', UsuarioController.show)
 
 export default app
