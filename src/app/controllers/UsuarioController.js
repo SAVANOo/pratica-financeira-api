@@ -33,7 +33,7 @@ class UsuarioController {
 
     show(req, res) {
         const id = req.params.id;
-        const sql = 'SELECT * FROM praticasfinanceirasdb.usuarios where id=?'
+        const sql = 'SELECT * FROM usuarios where id=?'
         conexao.query(sql, id, (error, result) => {
             if (error) {
                 console.log(error)

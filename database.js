@@ -1,9 +1,11 @@
 import conexao from './conexao.js';
+import dotenv from 'dotenv';
 
+dotenv.config()
 class Database {
     constructor(conexao) {
         this.conexao = conexao;
-        this.databaseName = 'praticasfinanceirasdb';
+        this.databaseName = process.env.DB_DATABASE;
     }
 
     async verificarBancoDeDados() {
