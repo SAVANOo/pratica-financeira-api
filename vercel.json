@@ -8,17 +8,8 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "(.*)",
             "dest": "/server.js"
         }
-    ],
-    "env": {
-        "DB_HOST": "@db_host",
-        "DB_USER": "@db_user",
-        "DB_PORT": "@db_port",
-        "DB_PASSWORD": "@db_password",
-        "DB_DATABASE": "@db_database",
-        "DB_URI": "@db_uri",
-        "DB_NAME": "@db_name"
-    }
+    ]
 }
