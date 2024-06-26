@@ -10,8 +10,10 @@ app.use(express.json())
 database.inicializarBancoDeDados()
 
 //  ROTAS
-app.get('/usuario/login', UsuarioController.login)
-app.get('/usuario/register', UsuarioController.register)
+app.post('/usuario/login', UsuarioController.login)
+app.post('/usuario/register', UsuarioController.register)
 app.get('/usuario/show/:id', UsuarioController.show)
+
+// app.get('/user/:id', authMiddleware, UsuarioController.show);
 
 export default app
